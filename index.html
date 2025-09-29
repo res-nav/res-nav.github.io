@@ -10,7 +10,7 @@
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="theme-color" content="#f9f9f9" />
     <title>海外资源导航</title>
-    <link rel="shortcut icon" href="../assets/images/favicon.png" />
+    <link rel="shortcut icon" href="../assets/images/512.png" />
     <meta name="keywords" content="海外资源导航" />
     <meta name="description" content="海外资源导航, 各类免费跨境工具、性价比 VPS、域名等" />
 
@@ -76,6 +76,64 @@ body.io-black-mode .header-toggle-icon path {
   background-color: transparent !important;
   box-shadow: none !important;
 }
+
+/* 卡片内容 */
+.io-black-mode p {
+    font-size: 13px !important;
+    color: #999 !important;
+}
+
+p.overflowClip_1.m-0.text-muted.text-xs {
+    font-size: 13px !important;
+}
+
+.overflowClip_1 strong {
+    font-size: 15px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+
+/* logo背景 */
+
+/* 白天模式：浅灰背景 */
+body:not(.io-black-mode) .sidebar-nav .logo {
+  background-color: #dbdbdb;
+border-bottom: 2px solid #1f7ffb;
+}
+
+/* 夜间模式：深灰背景 */
+body.io-black-mode .sidebar-nav .logo {
+  background-color: #232729;
+border-bottom: 2px solid #35eda2;
+}
+
+
+.border-top {
+    border: none !important;
+}
+
+body:not(.io-black-mode) .sidebar-nav-inner .flex-fill {
+    border-bottom: 1px solid #768391;
+font-size: 14px;
+font-weight: bold;
+}
+
+body.io-black-mode .sidebar-nav-inner .flex-fill {
+    border-bottom: 1px solid #c3c3c3;
+font-size: 14px;
+font-weight: bold;
+}
+
+h4 {
+font-weight: bold;
+}
+
+
+.border-color {
+    margin-bottom: 15px;
+}
+
 </style>
 
 </head>
@@ -93,17 +151,17 @@ body.io-black-mode .header-toggle-icon path {
                 <div class="sidebar-logo border-bottom border-color">
 
                     <div class="logo overflow-hidden">
-                        <a href="" class="logo-expanded">
-                            <img src="./assets/images/bt8-expand-light.png" height="40" class="logo-light"
-                                alt="海外资源导航">
-                            <img src="./assets/images/bt8-expand-dark.png" height="40" class="logo-dark d-none"
-                                alt="海外资源导航">
-                        </a>
+<a href="" class="logo-expanded">
+  <img src="./assets/images/light.png" height="40" class="logo-light"
+       alt="海外资源导航" style="filter: brightness(116%);">
+  <img src="./assets/images/dark.png" height="40" class="logo-dark d-none"
+       alt="海外资源导航" style="filter: brightness(116%);">
+</a>
+
                         <a href="" class="logo-collapsed">
-                            <img src="./assets/images/bt.png" height="40" class="logo-light"
-                                alt="海外资源导航">
-                            <img src="./assets/images/bt.png" height="40" class="logo-dark d-none"
-                                alt="海外资源导航">
+<img src="./assets/images/256.png" class="logo-light" alt="海外资源导航" style="width:27px; height:27px;">
+<img src="./assets/images/256.png" class="logo-dark d-none" alt="海外资源导航" style="width:27px; height:27px;">
+
                         </a>
                     </div>
 
@@ -210,10 +268,9 @@ body.io-black-mode .header-toggle-icon path {
                 <div class="container-fluid p-0">
 
                     <a href="" class="navbar-brand d-md-none" title="在线工具网">
-                        <img src="./assets/images/bt.png" class="logo-light"
-                            alt="在线工具网">
-                        <img src="./assets/images/bt.png" class="logo-dark d-none"
-                            alt="在线工具网">
+                        <img src="./assets/images/256.png" class="logo-light" alt="在线工具网" style="width:23px; height:23px;">
+                        <img src="./assets/images/256.png" class="logo-dark d-none" alt="在线工具网" style="width:23px; height:23px;">
+
                     </a>
 
 <div class="collapse navbar-collapse order-2 order-md-1">
@@ -335,6 +392,8 @@ body.io-black-mode .header-toggle-icon path {
                     </div>
                 </div>
 
+
+
                 <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
                     <div class="url-body default">
 
@@ -361,12 +420,10 @@ body.io-black-mode .header-toggle-icon path {
                                 </div>
                             </div>
                         </a>
-                        <a href="https://anaconda.org/bioconda/" class="togo text-center text-muted is-views" data-id="689"
-                            data-toggle="tooltip" data-placement="right" title="直达" rel="nofollow">
-                            <i class="iconfont icon-goto"></i>
-                        </a>
+
                     </div>
                 </div>
+
 
 
 
@@ -958,5 +1015,4 @@ function switchNightMode() {
 
 </body>
 </html>
-
 
