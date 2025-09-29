@@ -40,7 +40,80 @@
 </script>
 
 
+<!--
+<style>
+/* 白天模式：默认黑色 */
+body:not(.io-black-mode) .big-header-banner:not(.header-bg) .page-header .navbar-nav > li > a {
+  color: #000;
+}
 
+/* 夜间模式：白色 */
+body.io-black-mode .big-header-banner:not(.header-bg) .page-header .navbar-nav > li > a {
+  color: #fff;
+}
+
+.header-toggle-icon path {
+    fill: none;
+    transition: fill 0.3s ease;
+}
+
+/* 白天模式：黑色描边 */
+body:not(.io-black-mode) .header-toggle-icon path {
+  stroke: #000;
+  fill: none;
+}
+
+/* 夜间模式：白色描边 */
+body.io-black-mode .header-toggle-icon path {
+  stroke: #fff;
+  fill: none;
+}
+
+/* 可选：平滑过渡 */
+.header-toggle-icon path {
+  transition: stroke 0.3s ease;
+}
+
+</style>
+-->
+
+<style>
+/* 白天模式：导航文字黑色 */
+body:not(.io-black-mode) .big-header-banner .page-header .navbar-nav > li > a {
+  color: #000;
+}
+
+/* 夜间模式：导航文字白色 */
+body.io-black-mode .big-header-banner .page-header .navbar-nav > li > a {
+  color: #fff;
+}
+
+/* 汉堡按钮路径样式：不填充，只描边 */
+.header-toggle-icon path {
+  fill: none;
+  transition: stroke 0.3s ease;
+}
+
+/* 白天模式：强制汉堡按钮描边为黑色 */
+body:not(.io-black-mode) .header-toggle-icon path {
+  stroke: #000 !important;
+  fill: none !important;
+}
+
+body.io-black-mode .header-toggle-icon path {
+  stroke: #fff !important;
+  fill: none !important;
+}
+
+
+/* 清除按钮容器背景干扰（确保透明） */
+.header-mini-btn,
+.header-mini-btn label,
+.header-mini-btn svg {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+</style>
 
 </head>
 
@@ -180,45 +253,36 @@
                             alt="在线工具网">
                     </a>
 
-                    <div class="collapse navbar-collapse order-2 order-md-1">
-                        <div class="header-mini-btn">
-                            <label>
-                                <input id="mini-button" type="checkbox">
-                                <svg viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                    <path class="line--1" d="M0 40h62c18 0 18-20-17 5L31 55"></path>
-                                    <path class="line--2" d="M0 50h80"></path>
-                                    <path class="line--3" d="M0 60h62c18 0 18 20-17-5L31 45"></path>
-                                </svg>
-                            </label>
+<div class="collapse navbar-collapse order-2 order-md-1">
+  <div class="header-mini-btn">
+    <label>
+      <input id="mini-button" type="checkbox">
+      <svg class="header-toggle-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path class="line--1" d="M0 40h62c18 0 18-20-17 5L31 55"></path>
+        <path class="line--2" d="M0 50h80"></path>
+        <path class="line--3" d="M0 60h62c18 0 18 20-17-5L31 45"></path>
+      </svg>
+    </label>
+  </div>
 
-                        </div>
+  <ul class="navbar-nav site-menu" style="margin-right: 16px;">
+    <li>
+      <a href="./">
+        <i class="fa fa-home fa-lg mr-2"></i>
+        <span>首页</span>
+      </a>
+      <ul class="sub-menu"></ul>
+    </li>
+    <li>
+      <a href="./about">
+        <i class="fa fa-book fa-lg mr-2"></i>
+        <span>关于</span>
+      </a>
+      <ul class="sub-menu"></ul>
+    </li>
+  </ul>
+</div>
 
-                        <ul class="navbar-nav site-menu" style="margin-right: 16px;">
-
-			<li >
-				<a href="./">
-                                    <i class="fa fa-home fa-lg mr-2"></i>
-                                    <span>首页</span>
-                                </a>
-				<ul class="sub-menu">
-
-				</ul>
-			    </li>
-
-			<li >
-				<a href="./about">
-                                    <i class="fa fa-book fa-lg mr-2"></i>
-                                    <span>关于</span>
-                                </a>
-				<ul class="sub-menu">
-
-				</ul>
-			    </li>
-
-			</ul>
-
-
-                    </div>
 
 
 
@@ -904,7 +968,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // 设置背景图（可根据模式自定义）
-  $("#search-bg").css("background-image", "url(assets/images/bg-dna.jpg)");
+//  $("#search-bg").css("background-image", "url(assets/images/33.jpg)");
 });
 
 // 手动切换按钮（原有功能保留）
@@ -924,7 +988,7 @@ function switchNightMode() {
     $(".mode-ico").removeClass("icon-night").addClass("icon-light");
   }
 
-  $("#search-bg").css("background-image", "url(assets/images/bg-dna.jpg)");
+//  $("#search-bg").css("background-image", "url(assets/images/33.jpg)");
 }
 </script>
 
