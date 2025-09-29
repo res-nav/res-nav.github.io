@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 
+
+
+
+
+
+
+
+
+
 <head>
     <meta name="generator" content="Hugo 0.121.0">
 	
@@ -184,6 +193,30 @@ body.io-black-mode #search-bg {
     background: linear-gradient(135deg, #291c27, #1d2035, #252027, #1c1c29, #281d29);
 }
 
+
+#footer-tools {
+    bottom: 51%;
+}
+
+
+
+
+/* 通用样式：增大图标尺寸 */
+#yejian .mode-ico {
+  font-size: 20px; /* 可根据需要调整大小 */
+  transition: color 0.3s ease;
+}
+
+/* 白天模式：图标为黑色 */
+body:not(.io-black-mode) #yejian .mode-ico {
+  color: #000000;
+}
+
+/* 夜间模式：图标为白色 */
+body.io-black-mode #yejian .mode-ico {
+  color: #ffffff;
+}
+
 </style>
 
 </head>
@@ -364,6 +397,18 @@ body.io-black-mode #search-bg {
                             <a href="javascript:" id="sidebar-switch" data-toggle="modal"
                                 data-target="#sidebar"><i class="iconfont icon-classification icon-2x"></i></a>
                         </li>
+
+
+<li>		
+<a href="javascript:" onclick="window.location.href='javascript:switchNightMode()'" class="btn rounded-circle switch-dark-mode m-1" id="yejian" data-placement="left" title="日间模式">
+                    <i class="mode-ico iconfont icon-night"></i></a>
+</li>
+
+
+
+
+
+
                     </ul>
 
                 </div>
@@ -729,10 +774,7 @@ body.io-black-mode #search-bg {
                 </a>
 
 
-		<a href="javascript:" onclick="window.location.href='javascript:switchNightMode()'" class="btn rounded-circle switch-dark-mode m-1" id="yejian"
-                    data-toggle="tooltip" data-placement="left" title="日间模式">
-                    <i class="mode-ico iconfont icon-night"></i>
-                </a>
+
 
             </div>
             <div class="footer-inner">
