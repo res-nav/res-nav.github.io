@@ -7,10 +7,10 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="theme-color" content="#f9f9f9" />
-    <title>海外资源导航</title>
-    <link rel="shortcut icon" href="../assets/images/favicon.png" />
-    <meta name="keywords" content="海外资源导航" />
-    <meta name="description" content="海外资源导航, 各类免费跨境工具、性价比 VPS、域名等" />
+    <title>资源导航</title>
+    <link rel="shortcut icon" href="../assets/images/512.png" />
+    <meta name="keywords" content="资源导航" />
+    <meta name="description" content="资源导航, 海外资源，各类免费跨境工具、VPS、域名、IP 隐私工具等" />
 
     <link rel="stylesheet" id="block-library-css"
         href="./assets/css/block-library.min-5.6.2.css" type="text/css" media="all" />
@@ -43,19 +43,16 @@
 <body class="page-body boxed-container">
     <main role="main" class="flex-shrink-0">
     <div class="container">
-        <h1 class="mt-5">关于作者</h1>
+        <h1 class="mt-5">关于</h1>
         <div class="content">
             <br/>
-<p>在大学期间，我就开始对编程产生浓厚的兴趣，通过自学和实践，我掌握了各种编程语言和开发工具。在jd工作的期间，我主要负责开发和维护公司的后端系统，涉及到的主要技术栈是Java和Spring Boot。在这个过程中，我积累了丰富的经验，能够熟练地使用Java进行后端开发，并且能够快速地解决开发过程中遇到的各种问题。</p>
-<p>除了Java和Spring Boot，我还熟悉Python、C++等其他编程语言，并且能够使用JavaScript进行前端开发。此外，我还熟悉数据库的操作，能够熟练使用MySQL、Oracle等数据库管理系统。</p>
-<p>在工作中，我注重团队协作，能够与团队成员保持良好的沟通和合作。同时，我还注重代码的可读性和可维护性，能够编写高质量的代码。我对于新技术的学习充满热情，并且能够将所学知识应用到实际工作中。</p>
-<p>除了工作和学习，我还积极参加各种技术社区和活动，通过与他人的交流和学习，不断提升自己的技术水平和解决问题的能力。</p>
+
 <br/>
 <h4 id="联系方式">联系方式</h4>
 <ul>
-<!--<li>Wechat: xxxx(微信)</li>-->
+
 <li>Github: <a href="https://res-nav.github.com">https://res-nav.github.com</a></li>
-<!--<li>个人主页: <a href="https://github.com">https://github.com</a></li>-->
+
 </ul>
 
         </div>
@@ -95,7 +92,7 @@
 
             </div>
             <div class="footer-inner">
-                <div class="footer-text">本站内容源自互联网，如有内容侵犯了你的权益，请联系删除相关内容，联系：https://res-nav.github.com <br/>© 2021 - 2023 By <a href="https://res-nav.github.com">Web_tool</a> | <a href="https://res-nav.github.com">京ICP备2023018588号</a><br/></div>
+                <div class="footer-text">本站内容源自互联网，如有内容侵犯了你的权益，请联系删除相关内容，联系：https://res-nav.github.com <br/>© 2025 By <a href="https://res-nav.github.com">Web_tool</a><br/></div>
             </div>
         </footer>
     </div>
@@ -124,98 +121,99 @@
     });
 </script>
 <script>
-    $(document).ready(function(){
-        setTimeout(function () {
-            if ($('a.smooth[href="' + window.location.hash + '"]')[0]) {
-                $('a.smooth[href="' + window.location.hash + '"]').click();
-            }else if (window.location.hash != '') {
-                $("html, body").animate({
-                    scrollTop: $(window.location.hash).offset().top - 90
-                }, {
-                    duration: 500,
-                    easing: "swing"
-                });
-            }
-        }, 300);
-        $(document).on('click','a.smooth',function(ev) {
-            if($('#sidebar').hasClass('show') && !$(this).hasClass('change-href')){
-                $('#sidebar').modal('toggle');
-            }
-            if($(this).attr("href").substr(0, 1) == "#"){
-                $("html, body").animate({
-                    scrollTop: $($(this).attr("href")).offset().top - 90
-                }, {
-                    duration: 500,
-                    easing: "swing"
-                });
-            }
-            if($(this).hasClass('go-search-btn')){
-                $('#search-text').focus();
-            }
-            if(!$(this).hasClass('change-href')){
-                var menu =  $("a"+$(this).attr("href"));
-                menu.click();
-                toTarget(menu.parent().parent(),true,true);
-            }
-        });
-        $(document).on('click','a.tab-noajax',function(ev) {
-            var url = $(this).data('link');
-            if(url)
-                $(this).parents('.d-flex.flex-fill.flex-tab').children('.btn-move.tab-move').show().attr('href', url);
-            else
-                $(this).parents('.d-flex.flex-fill.flex-tab').children('.btn-move.tab-move').hide();
-        });
 
+$(document).ready(function () {
+    $(document).on('click', 'a.smooth', function (ev) {
+        const href = $(this).attr("href");
+        const isHash = href && href.startsWith("#");
+        const target = $(href);
+
+        if ($('#sidebar').hasClass('show') && !$(this).hasClass('change-href')) {
+            $('#sidebar').modal('toggle');
+        }
+
+        if (isHash && target.length) {
+            $("html, body").animate({
+                scrollTop: target.offset().top - 90
+            }, {
+                duration: 500,
+                easing: "swing"
+            });
+        }
+
+        if ($(this).hasClass('go-search-btn')) {
+            $('#search-text').focus();
+        }
+
+        // 移除无效点击模拟和 toTarget 调用，避免找不到元素报错
     });
+
+    $(document).on('click', 'a.tab-noajax', function () {
+        const url = $(this).data('link');
+        const moveBtn = $(this).parents('.d-flex.flex-fill.flex-tab').children('.btn-move.tab-move');
+        if (url) {
+            moveBtn.show().attr('href', url);
+        } else {
+            moveBtn.hide();
+        }
+    });
+});
 </script>
 
+
+
 <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-(function(){
-    if(document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === ''){
-        if(new Date().getHours() > 22 || new Date().getHours() < 6){
-            document.body.classList.remove('io-black-mode');
-            document.body.classList.add('io-grey-mode');
-            document.cookie = "night=1;path=/";
-            console.log('夜间模式开启');
-        }else{
-            document.body.classList.remove('night');
-            document.cookie = "night=0;path=/";
-            console.log('夜间模式关闭');
-        }
-    }else{
-        var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
-        if(night == '0'){
-            document.body.classList.remove('night');
-        }else if(night == '1'){
-            document.body.classList.add('night');
-        }
-    }
-})();
+  // 自动根据系统外观设置切换主题
+  if (prefersDark) {
+    switchNightMode(); // 直接调用你的模板切换函数
+    console.log('系统暗黑模式 → 夜间模式启用');
+  } else {
+    console.log('系统浅色模式 → 白天模式启用');
+  }
 
-$("#search-bg").css("background-image", "url(assets\/images\/bg-dna.jpg)");
-function switchNightMode(){
-    var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
-    if(night == '0'){
-	$("#search-bg").css("background-image", "url(assets\/images\/bg-dna.jpg)");
-        document.body.classList.remove('io-grey-mode');
-        document.body.classList.add('io-black-mode');
-        document.cookie = "night=1;path=/"
-        console.log(' ');
-        $(".switch-dark-mode").attr("data-original-title","日间模式");
-        $(".mode-ico").removeClass("icon-night");
-        $(".mode-ico").addClass("icon-light");
-    }else{
-	$("#search-bg").css("background-image", "url(assets\/images\/bg-dna.jpg)")
-        document.body.classList.remove('io-black-mode');
-        document.body.classList.add('io-grey-mode');
-        document.cookie = "night=0;path=/"
-        console.log(' ');
-        $(".switch-dark-mode").attr("data-original-title","夜间模式");
-        $(".mode-ico").removeClass("icon-light");
-        $(".mode-ico").addClass("icon-night");
-    }
+  // 设置背景图（可根据模式自定义）
+//  $("#search-bg").css("background-image", "url(assets/images/33.jpg)");
+});
+
+// 手动切换按钮（原有功能保留）
+function switchNightMode() {
+  const body = document.body;
+  const isNight = body.classList.contains('io-grey-mode');
+
+  if (isNight) {
+    body.classList.remove('io-grey-mode');
+    body.classList.add('io-black-mode');
+    $(".switch-dark-mode").attr("data-original-title", "夜间模式");
+    $(".mode-ico").removeClass("icon-light").addClass("icon-night");
+  } else {
+    body.classList.remove('io-black-mode');
+    body.classList.add('io-grey-mode');
+    $(".switch-dark-mode").attr("data-original-title", "日间模式");
+    $(".mode-ico").removeClass("icon-night").addClass("icon-light");
+  }
+
+//  $("#search-bg").css("background-image", "url(assets/images/33.jpg)");
 }
+</script>
+<script>
+document.getElementById('searchInput').addEventListener('input', function () {
+  const keyword = this.value.toLowerCase();
+  const cards = document.querySelectorAll('.url-card');
+
+  cards.forEach(card => {
+    const titleElement = card.querySelector('strong');
+    const titleText = titleElement ? titleElement.textContent.toLowerCase() : '';
+
+    if (titleText.includes(keyword)) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+});
 </script>
 </body>
 </html>
